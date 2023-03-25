@@ -70,7 +70,7 @@ function hideMarkers() {
 
 
 var global = [];
-$.get("info.json", function (data) {
+$.get("../json/info.json", function (data) {
   global = data.records;
   useData(data.records);
 });
