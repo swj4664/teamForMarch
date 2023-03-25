@@ -174,7 +174,7 @@
     .inner form input {
         border: 1px solid #6e6e6e;
         border-radius: 50px;
-        width: 310px;
+        width: 280px;
         height: 55px;
         margin-bottom: 2rem;
         cursor: pointer;
@@ -182,7 +182,7 @@
 
     #btn {
         display: block;
-        width: 310px;
+        width: 280px;
         height: 55px;
         border-radius: 30px;
         padding-left: 30px;
@@ -195,7 +195,7 @@
     
     #detail {
         margin-top: 20px;
-        width: 310px;
+        width: 280px;
         height: 55px;
         border-radius: 30px;
         padding-left: 30px;
