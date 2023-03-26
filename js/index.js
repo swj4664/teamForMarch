@@ -3,7 +3,7 @@
 var mapContainer = document.getElementById("map"), // 지도를 표시할 div
   mapOption = {
     center: new kakao.maps.LatLng(36.436373, 128.034173), // 지도의 중심좌표
-    level: 13, // 지도의 확대 레벨
+    level: 11, // 지도의 확대 레벨
   };
 
 var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
@@ -28,7 +28,7 @@ var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
 
 // 화면에 마커를 표시하는 함수
 var markers = [];
-function addMarker(position, nameAll) {
+function addMarker(position, nameAll, lat, lng) {
   var marker = new kakao.maps.Marker({
     map: map, //
     position: position,
@@ -46,7 +46,8 @@ function addMarker(position, nameAll) {
       removable : iwRemoveable
   });
   kakao.maps.event.addListener(marker, 'click', function() {
-    infowindow.open(map, marker);  
+    infowindow.open(map, marker); 
+    weather(nameAll, lat, lng) 
   });
 
   
@@ -86,7 +87,7 @@ function cityMarker(city) {
   });
 
   for (let i in cityList) {
-    addMarker(new kakao.maps.LatLng(cityList[i].lat, cityList[i].lng), cityList[i].name);
+    addMarker(new kakao.maps.LatLng(cityList[i].lat, cityList[i].lng), cityList[i].name, cityList[i].lat, cityList[i].lng);
   }
 
   // 지도위치를 현재 선택한 도시의 첫번째 레코드의 위도, 경도값으로 이동하는 함수 호출
@@ -101,7 +102,7 @@ function cityMarker2(city) {
     return sidoList[1] === city;
   });
   for (let i in cityList) {
-    addMarker(new kakao.maps.LatLng(cityList[i].lat, cityList[i].lng));
+    addMarker(new kakao.maps.LatLng(cityList[i].lat, cityList[i].lng), cityList[i].name, cityList[i].lat, cityList[i].lng);
   }
 
   // 지도위치를 현재 선택한 도시의 첫번째 레코드의 위도, 경도값으로 이동하는 함수 호출
@@ -149,6 +150,7 @@ function useData(globalData) {
   cityIndex.sort();
 
   let button = "";
+  let btnAll = "";
 
   cityIndex.map((value) => {
     button += `<option id="btnn" value="${value}">${value}</option>`;
@@ -175,3 +177,88 @@ $("#btn").click((e) => {
 
 var level = map.getLevel();
 
+
+// ----------------------------------------------------------
+
+
+function weather(nameAll, lnga, latb){
+  
+  navigator.geolocation.getCurrentPosition(onGeoOk, onGeoError);
+  
+  let nameAlla = nameAll
+  let lngaa = lnga
+  let latbb = latb
+  
+  let lang = "kr"
+  function onGeoOk(position) {
+      const lat = position.coords.latitude;
+      const lon = position.coords.longitude;
+      getWeather(lat, lon)
+  }
+  
+  function onGeoError() {
+      alert("날씨를 제공할 위치를 찾을 수 없습니다.")
+  }
+  
+  function getWeather(lat, lon) {
+      $.ajax({
+          url: `https://api.openweathermap.org/data/2.5/weather?lat=${lngaa}&lon=${latbb}&appid=c2d0e5bbe716ac60f8541d884dda4c9c&lang=${lang}`,
+          type: "GET",
+          data: { units: "metric" }, // 섭씨로 변환
+          success: function (data) {
+              Info(data)// temp, weather
+              // menuInfo(data)
+          },
+          error: function (arg) {
+              alert("통신실패시에만 실행");
+          }
+      });
+  }
+  
+  function Info(data) {
+      let weatherSpan = document.querySelector('.weatherInfo span') 
+      let weatherGet = data.weather[0].description
+      let tempUp = Math.ceil(data.main.temp * 10) / 10; // 반올림
+      // let temp = ''
+      let weather = ''
+      
+      
+      // temp += `<span>현재온도는 ${num}°C</span>`
+      weather += `<span>현재<br><span class="tourName">'${nameAll}'</span><br>의 날씨는 <span>'${weatherGet}'</span>입니다.</span>`
+      // $('.tempInfo').append(temp)
+      if(weatherSpan != null){
+        weatherSpan.remove('span')
+      }
+      $('.weatherInfo').append(weather)
+  //숫자 증가 애니메이션
+      $({ val: 0 }).animate({ val: tempUp }, {
+          duration: 1000,
+          step: function () {
+              var num = numberWithCommas(this.val.toFixed(1));
+              $(".tempInfo").text(num);
+          },
+          complete: function () {
+              var num = numberWithCommas(this.val.toFixed(1));
+              $(".tempInfo").text(num);
+          }
+      });
+      document.querySelector('.left2 .nowTemp span').style.display = 'inline-block'
+  
+      function numberWithCommas(x) {
+          return x
+      }
+  // 숫자증가 애니메이션 끝
+  }
+  
+  let icon = document.querySelectorAll('.list')
+  let indi = document.querySelector('.indicator')
+  
+  function menuAct(e) {
+      icon.forEach((i) =>
+          i.classList.remove("active"))
+      this.classList.add("active")
+      e.preventDefault();
+  }
+  icon.forEach((i) =>
+      i.addEventListener('click', menuAct))
+    }

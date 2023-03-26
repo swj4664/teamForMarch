@@ -11,5 +11,3 @@ home.addEventListener('mouseout', function(){
     homewrap[1].innerHTML= `<i class="fa-solid fa-house"></i>`
 })
 
-// login js 구역
-

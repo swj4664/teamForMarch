@@ -99,7 +99,8 @@
                     </form>
                     <h3>어디로, 언제 떠나시나요?</h3>
                     <div class="down">
-                        <select id="btn"></select>
+                        <select id="btn">
+                        </select>
                         <i class="fa-solid fa-caret-down"></i>
                     </div>
                     <div class="up">
@@ -107,10 +108,11 @@
                         <i class="fa-solid fa-caret-down"></i>
                     </div>
                     <div class="bottom">
-                        <button type="button" class="search">검색하기</button>
+                        <button type="button" class="search" onclick="mapOpen()">검색하기</button>
                     </div>
                 </div>
                 <div class="right">
+
                     <!-- left버튼 -->
                     <div class="pre" onclick="prevSlide()">
                         <button class="innerPre">&lt;</button>
@@ -135,11 +137,25 @@
                             <div class="img img1">
                                 <img src="./img/seoul3.png" alt="#">
                             </div>
-
-
                         </div>
                     </div>
 
+                </div>
+
+            </div>
+            <div class="inner2">
+                <div class="left2">
+                    <div class="weatherInfo" style="position: relative;"></div>
+                    <div class="nowTemp">
+                        <div class="tempInfo">지도위의 마커를 선택해<br> 지역의 날씨를 확인하세요.</div>
+                        <span>°C</span>
+                    </div>
+                    <div class="bottomClose">
+                        <button type="button" class="close" onclick="mapClose()">닫기</button>
+                    </div>
+                </div>
+                <div class="right2">
+                    <div id="map"></div>
                 </div>
             </div>
         </section>
@@ -151,6 +167,7 @@
     <script src="./js/main.js"></script>
     <script src="./js/index.js"></script>
     <script src="./js/slide.js"></script>
+    <script src="./js/map.js"></script>
 </body>
 
 </html>
