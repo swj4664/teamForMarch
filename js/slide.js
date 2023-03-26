@@ -10,7 +10,7 @@ let btn = document.querySelector('.img1') // 버튼 클릭 함수 실행을 위�
 let btnAll = document.querySelectorAll('.img1') // 버튼 클릭 함수 실행을 위한 변수
 let count = 0;
 
-if(window.innerWidth > 1100){
+if (window.innerWidth > 1100) {
     document.querySelector('.imgBox').style.left = '-450px'
 
     function imgSlideShow() {
@@ -26,13 +26,13 @@ if(window.innerWidth > 1100){
                 imgBox.style.transform = `translateX(0px)`;
             }, 1000)
             count = 0;
-    
+
         }
     }
-    
+
     // 첫번째 버튼 색상 
     btnAll[0].style.background = 'rgb(255, 255, 255, 1)'
-    
+
     function prevSlide() {
         imgBox.style.transition = `all 1s`;
         if (count > 0) {
@@ -50,7 +50,7 @@ if(window.innerWidth > 1100){
             return count = imgWrap.length - 1;
         }
     }
-    
+
     function nextSlide() {
         imgBox.style.transition = `all 1s`;
         if (count < imgWrap.length - 1) {
@@ -67,12 +67,12 @@ if(window.innerWidth > 1100){
             return count = 0;
         }
     }
-    
+
 }
 
 
 
-if(window.innerWidth <= 550){
+if (window.innerWidth <= 550) {
     document.querySelector('.imgBox').style.left = '-280px'
 
     function imgSlideShow() {
@@ -88,13 +88,13 @@ if(window.innerWidth <= 550){
                 imgBox.style.transform = `translateX(0px)`;
             }, 1000)
             count = 0;
-    
+
         }
     }
-    
+
     // 첫번째 버튼 색상 
     btnAll[0].style.background = 'rgb(255, 255, 255, 1)'
-    
+
     function prevSlide() {
         imgBox.style.transition = `all 1s`;
         if (count > 0) {
@@ -112,7 +112,7 @@ if(window.innerWidth <= 550){
             return count = imgWrap.length - 1;
         }
     }
-    
+
     function nextSlide() {
         imgBox.style.transition = `all 1s`;
         if (count < imgWrap.length - 1) {
@@ -129,7 +129,7 @@ if(window.innerWidth <= 550){
             return count = 0;
         }
     }
-    
+
 }
 
 
@@ -142,26 +142,35 @@ let innerStop = document.querySelector('.innerStop')
 
 // 슬라이드 막기
 let slideControl = setInterval(imgSlideShow, 5000)
-
-next.addEventListener('mouseover', () => {
-    clearInterval(slideControl)
-})
-next.addEventListener('mouseout', () => {
-    return slideControl = setInterval(imgSlideShow, 5000)
-})
-pre.addEventListener('mouseover', () => {
-    clearInterval(slideControl)
-})
-pre.addEventListener('mouseout', () => {
-    return slideControl = setInterval(imgSlideShow, 5000)
-})
-
 let go = false
+
+if (!go) {
+    next.addEventListener('mouseover', () => {
+        clearInterval(slideControl)
+    })
+    next.addEventListener('mouseout', () => {
+        return slideControl = setInterval(imgSlideShow, 5000)
+    })
+    pre.addEventListener('mouseover', () => {
+        clearInterval(slideControl)
+    })
+    pre.addEventListener('mouseout', () => {
+        return slideControl = setInterval(imgSlideShow, 5000)
+    })
+}
+
 function stopSlide() {
     if (!go) {
         clearInterval(slideControl)
         innerStop.innerText = '>';
+        next.addEventListener('mouseout', () => {
+            clearInterval(slideControl)
+        })
+        pre.addEventListener('mouseout', () => {
+            clearInterval(slideControl)
+        })
         go = true
+
     } else {
         innerStop.innerText = '||';
         go = false
