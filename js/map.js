@@ -7,6 +7,7 @@ function mapOpen() {
         alert('상세지역을 선택하세요.')
     } else {
         open.style.zIndex = '9'
+        open.style.opacity = '1'
         inner.style.display = 'none'
     }
 }
