@@ -8,7 +8,7 @@ var mapContainer = document.getElementById("map"), // 지도를 표시할 div
 
 var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
 
-function mapOpen(){
+function mapOpen() {
   mapContainer.style.display = 'block'
 }
 
@@ -42,15 +42,15 @@ function addMarker(position, nameAll, lat, lng) {
   var iwRemoveable = true;
 
   var infowindow = new kakao.maps.InfoWindow({
-      content : iwContent,
-      removable : iwRemoveable
+    content: iwContent,
+    removable: iwRemoveable
   });
-  kakao.maps.event.addListener(marker, 'click', function() {
-    infowindow.open(map, marker); 
-    weather(nameAll, lat, lng) 
+  kakao.maps.event.addListener(marker, 'click', function () {
+    infowindow.open(map, marker);
+    weather(nameAll, lat, lng)
   });
 
-  
+
 
 }
 
@@ -181,84 +181,100 @@ var level = map.getLevel();
 // ----------------------------------------------------------
 
 
-function weather(nameAll, lnga, latb){
-  
+function weather(nameAll, lnga, latb) {
+
   navigator.geolocation.getCurrentPosition(onGeoOk, onGeoError);
-  
+  let clickAlram = document.querySelector('.clickAlram')
   let nameAlla = nameAll
   let lngaa = lnga
   let latbb = latb
-  
+
   let lang = "kr"
   function onGeoOk(position) {
-      const lat = position.coords.latitude;
-      const lon = position.coords.longitude;
-      getWeather(lat, lon)
+    const lat = position.coords.latitude;
+    const lon = position.coords.longitude;
+    getWeather(lat, lon)
   }
-  
+
+  clickAlram.style.display = 'none'
+
   function onGeoError() {
-      alert("날씨를 제공할 위치를 찾을 수 없습니다.")
+    alert("날씨를 제공할 위치를 찾을 수 없습니다.")
   }
-  
+
   function getWeather(lat, lon) {
-      $.ajax({
-          url: `https://api.openweathermap.org/data/2.5/weather?lat=${lngaa}&lon=${latbb}&appid=c2d0e5bbe716ac60f8541d884dda4c9c&lang=${lang}`,
-          type: "GET",
-          data: { units: "metric" }, // 섭씨로 변환
-          success: function (data) {
-              Info(data)// temp, weather
-              // menuInfo(data)
-          },
-          error: function (arg) {
-              alert("통신실패시에만 실행");
-          }
-      });
+    $.ajax({
+      url: `https://api.openweathermap.org/data/2.5/weather?lat=${lngaa}&lon=${latbb}&appid=c2d0e5bbe716ac60f8541d884dda4c9c&lang=${lang}`,
+      type: "GET",
+      data: { units: "metric" }, // 섭씨로 변환
+      success: function (data) {
+        Info(data)// temp, weather
+        // menuInfo(data)
+      },
+      error: function (arg) {
+        alert("통신실패시에만 실행");
+      }
+    });
   }
-  
+
   function Info(data) {
-      let weatherSpan = document.querySelector('.weatherInfo span') 
-      let weatherGet = data.weather[0].description
-      let tempUp = Math.ceil(data.main.temp * 10) / 10; // 반올림
-      // let temp = ''
-      let weather = ''
-      
-      
-      // temp += `<span>현재온도는 ${num}°C</span>`
-      weather += `<span>현재<br><span class="tourName">'${nameAll}'</span><br>의 날씨는 <span>'${weatherGet}'</span>입니다.</span>`
-      // $('.tempInfo').append(temp)
-      if(weatherSpan != null){
-        weatherSpan.remove('span')
+    let weatherIcon = {
+      '01': 'fas fa-sun',
+      '02': 'fas fa-cloud-sun',
+      '03': 'fas fa-cloud',
+      '04': 'fas fa-cloud-meatball',
+      '09': 'fas fa-cloud-sun-rain',
+      '10': 'fas fa-cloud-showers-heavy',
+      '11': 'fas fa-poo-storm',
+      '13': 'far fa-snowflake',
+      '50': 'fas fa-smog'
+    };
+    let weatherSpan = document.querySelector('.weatherInfo span')
+    let weatherGet = data.weather[0].description
+    let iconReady = weatherIcon[(data.weather[0].icon).substr(0,2)]
+    let tempUp = Math.ceil(data.main.temp * 10) / 10; // 반올림
+    // let temp = ''
+    let weather = ''
+    let icon = ''
+
+    // temp += `<span>현재온도는 ${num}°C</span>`
+    weather += `<span>현재<br><span class="tourName">'${nameAll}'</span><br>의 날씨는 <span>'${weatherGet}'</span>입니다.</span>`
+    icon = `<i class="${iconReady}"></i>`
+    // $('.tempInfo').append(temp)
+    if (weatherSpan != null) {
+      weatherSpan.remove('span')
+    }
+    $('.weatherIcon').prepend(icon)
+    $('.weatherInfo').append(weather)
+    //숫자 증가 애니메이션
+    $({ val: 0 }).animate({ val: tempUp }, {
+      duration: 1000,
+      step: function () {
+        var num = numberWithCommas(this.val.toFixed(1));
+        $(".tempInfo").text(num);
+      },
+      complete: function () {
+        var num = numberWithCommas(this.val.toFixed(1));
+        $(".tempInfo").text(num);
       }
-      $('.weatherInfo').append(weather)
-  //숫자 증가 애니메이션
-      $({ val: 0 }).animate({ val: tempUp }, {
-          duration: 1000,
-          step: function () {
-              var num = numberWithCommas(this.val.toFixed(1));
-              $(".tempInfo").text(num);
-          },
-          complete: function () {
-              var num = numberWithCommas(this.val.toFixed(1));
-              $(".tempInfo").text(num);
-          }
-      });
-      document.querySelector('.left2 .nowTemp span').style.display = 'inline-block'
-  
-      function numberWithCommas(x) {
-          return x
-      }
-  // 숫자증가 애니메이션 끝
+    });
+    document.querySelector('.left2 .nowTemp span').style.display = 'inline-block'
+
+    function numberWithCommas(x) {
+      return x
+    }
+    // 숫자증가 애니메이션 끝
   }
-  
+
   let icon = document.querySelectorAll('.list')
   let indi = document.querySelector('.indicator')
-  
+
   function menuAct(e) {
-      icon.forEach((i) =>
-          i.classList.remove("active"))
-      this.classList.add("active")
-      e.preventDefault();
+    icon.forEach((i) =>
+      i.classList.remove("active"))
+    this.classList.add("active")
+    e.preventDefault();
   }
   icon.forEach((i) =>
-      i.addEventListener('click', menuAct))
-    }
+    i.addEventListener('click', menuAct))
+}
