@@ -1,8 +1,13 @@
+#map>div>div>div>div:last-child {
+  border-radius: 20px;
+  width: 260px !important;
+  border: 0px solid rgb(118, 129, 168) !important;
+  padding: 10px;
+}
+
 .overlaybox {
-  position: relative;
-  /* width: 360px; */
-  /* height: 100%; */
-  padding: 15px 10px;
+  top: 50%;
+  left: 50%;
 }
 
 .overlaybox div,
@@ -18,13 +23,14 @@ ul {
 
 .overlaybox .first {
   position: relative;
-  width: 247px;
-  height: 136px;
-  background: url("../img/16.jpg") no-repeat;
-  /* background: url("http://loremflickr.com/1280/720") no-repeat; */
+  width: 230px;
+  height: 125px;
+  border-radius: 15px;
+  background: url("../img/markerBg.jpg") no-repeat;
   background-size: cover;
-  margin-bottom: 8px;
+  margin: 0 auto;
 }
+
 
 .first .text {
   color: #fff;
