@@ -1,13 +1,6 @@
-#map>div>div>div>div:last-child {
-  border-radius: 20px;
-  width: 260px !important;
-  border: 0px solid rgb(118, 129, 168) !important;
-  padding: 10px;
-}
-
 .overlaybox {
-  top: 50%;
-  left: 50%;
+  position: relative;
+  padding: 10px 10px;
 }
 
 .overlaybox div,
@@ -19,7 +12,16 @@ ul {
 
 .overlaybox li {
   list-style: none;
+  width: 230px;
 }
+
+#map>div>div>div>div:last-child {
+  border-radius: 20px;
+  width: 250px !important;
+  height: 100%;
+  border: 0px solid rgb(118, 129, 168) !important;
+}
+
 
 .overlaybox .first {
   position: relative;
@@ -28,7 +30,7 @@ ul {
   border-radius: 15px;
   background: url("../img/markerBg.jpg") no-repeat;
   background-size: cover;
-  margin: 0 auto;
+  margin-bottom: 8px;
 }
 
 
@@ -53,11 +55,9 @@ ul {
 .overlaybox li {
   position: relative;
   margin-bottom: 2px;
-  background: #2b2d36;
   padding: 5px 10px;
-  color: #ffffff;
   line-height: 1;
-  /* cursor: pointer; */
+  text-align: center;
 }
 
 .overlaybox li span {
