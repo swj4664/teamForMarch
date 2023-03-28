@@ -13,26 +13,65 @@ body {
     overflow-x: hidden;
 }
 
+.mainBtn {
+    position: fixed;
+    top: 55%;
+    transform: translateY(-50%);
+    margin-left: 50px;
+    z-index: 999;
+}
+
+.mainBtn>li {
+    cursor: pointer;
+    list-style: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 25px;
+    background-color: rgba(191, 7, 255, .3);
+    margin-bottom: 20px;
+}
+
+.scrollSlide {
+     position: absolute;
+     padding: 10px;
+     width: 250px;
+     border-radius: 50px;
+     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+     background-color: white;
+     bottom: 10px;
+     left: 50%;
+     transform: translateX(-50%);
+     z-index: 999;
+     text-align: center;
+}
+
+
+
+.scrollSlide .arrow {
+    rotate: 90deg;
+    height: 8px;
+}
+
 .wrap {
     height: 200vh;
 }
 
-.container1 {
+.container {
     height: 100vh;
     overflow: hidden;
 }
 
 .header {
-    position:fixed;
+    position: fixed;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: .7rem 2rem;
-    background: linear-gradient(to right, #5707ff, #BF07FF);
+    background: linear-gradient(to right, rgb(87, 7, 255), rgb(191, 7, 255));
     font-size: 20px;
     color: white;
-    z-index : 9999;
+    z-index: 9999;
 }
 
 .header .logo img {
@@ -60,7 +99,7 @@ body {
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
     overflow: hidden;
     transition: all 0.5s;
-    z-index : 9999;
+    z-index: 9999;
 }
 
 .home.on {
@@ -108,27 +147,32 @@ body {
     flex: 1;
 }
 
-.home .homewrap li:nth-child(2) i{
+.home .homewrap li:nth-child(2) i {
     animation: cloud 2.5s ease infinite;
 }
 
-@keyframes cloud{
+@keyframes cloud {
     0% {
         transform: translateY(0px);
     }
+
     10% {
         transform: translateY(-3px);
     }
-    20%{
+
+    20% {
         transform: translateY(0px);
     }
-    30%{
+
+    30% {
         transform: translateY(-3px);
     }
-    40%{
+
+    40% {
         transform: translateY(0px);
     }
-    100%{
+
+    100% {
         transform: translateY(0px);
     }
 }
@@ -200,15 +244,15 @@ input {
 }
 
 .sXmark {
-    position : absolute;
+    position: absolute;
     top: 3%;
     right: 3%;
     font-size: 2rem;
     width: 2.5rem;
     height: 2.5rem;
     background-color: #BF07FF;
-    color : white;
-    display : flex;
+    color: white;
+    display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50px;
@@ -282,15 +326,15 @@ input {
 }
 
 .lXmark {
-    position : absolute;
+    position: absolute;
     top: 5%;
     right: 5%;
     font-size: 2rem;
     width: 2.5rem;
     height: 2.5rem;
     background-color: #BF07FF;
-    color : white;
-    display : flex;
+    color: white;
+    display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50px;
@@ -541,7 +585,7 @@ select {
 
 #imgContainer .imgBox img {
     width: 450px;
-  }
+}
 
 
 
@@ -750,7 +794,7 @@ select {
     width: 100vw;
     height: 100vh;
     max-height: 700px;
-    background:rgba(87, 7, 255, 0.9);
+    background: rgba(87, 7, 255, 0.9);
     margin: 5rem auto;
     position: relative;
 }
@@ -765,6 +809,7 @@ select {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
 /* swrap 구역스 */
 
 .swrap {
@@ -773,30 +818,33 @@ select {
 
 /* .texts 시작 */
 .texts {
-    display : flex;
+    display: flex;
     align-items: center;
     padding: 2rem;
 }
 
-.texts >img, h2, span {
+.texts>img,
+h2,
+span {
     padding: 0.5rem;
 }
+
 .texts h2 {
     font-size: 2.2rem;
 }
 
-.texts > span {
-    color : #262626;
+.texts>span {
+    color: #262626;
 }
 
-.texts > div {
-    background-color:#262626;
+.texts>div {
+    background-color: #262626;
     width: 2px;
     height: 1.5rem;
     margin: 0.01rem;
 }
 
-.texts > img {
+.texts>img {
     width: 5rem;
     height: 5rem;
 }
@@ -816,7 +864,7 @@ select {
 }
 
 .tleft .hot {
-    display : flex;
+    display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.2rem;
@@ -826,20 +874,20 @@ select {
     padding: 0.5rem 0;
     margin-bottom: 1rem;
     border-radius: 50px;
-} 
+}
 
-.tleft .hot > img {
+.tleft .hot>img {
     width: 40px;
 }
 
 /*  mright */
 
-.mright{ 
-    display : flex;
+.mright {
+    display: flex;
     position: relative;
 }
 
-.mright > img {
+.mright>img {
     width: 300px;
     height: 300px;
     padding: 1rem;
@@ -849,4 +897,3 @@ select {
 .mright .imgs1 {
     position: relative;
 }
-
