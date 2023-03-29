@@ -47,12 +47,16 @@ xmark1.addEventListener("click", function () {
 
 // 로그인 페이지 유효성 검사 ----------------------------------------------------------------
 
+
 const us = document.getElementById("us");
 const uswers = document.querySelector(".uswers");
 // console.log(us)
 const pw = document.getElementById("pw");
 const pwd = document.querySelector(".pwd");
-const div = document.createElement("div");
+const userror = document.querySelector('.userror')
+const pwderror = document.querySelector('.pwderror')
+let regIdPw = /^[a-zA-Z0-9]{4,12}$/;
+let values = regIdPw
 
 function er() {
     btn1.addEventListener("click", function () {
@@ -69,20 +73,31 @@ function er() {
 }
 er();
 
-us.addEventListener("keydown", function () {
-    if (us.value === "") {
-        uswers.append(div);
-        div.innerText = "@아이디가 정확하지 않습니다.";
-        div.style.color = "red";
+
+
+us.addEventListener("keydown", function (event) {
+    if (us.value !== regIdPw && us.value > 5) {
+        return event.preventDefault();
+       
     }
+
+    if (!regIdPw.test(us.value)) {
+        userror.innerText = "@아이디가 정확하지 않습니다.";
+        userror.style.color = "red";
+        return false;
+    } 
 });
 
 pw.addEventListener("keydown", function () {
-    if (pw.value === "") {
-        pwd.append(div);
-        div.innerText = "@비밀번호가 정확하지 않습니다.";
-        div.style.color = "red";
+    if (!regIdPw.test(pw.value)) {
+        pwderror.innerText = "@비밀번호가 정확하지 않습니다.";
+        pwderror.style.color = "red";
+        return false;
     }
 });
 
 // 로그인 페이지 유효성 검사 끝 ----------------------------------------------------------------
+
+// 회원가입 유효성 검사 시작 ---------------------------------------------------------------------------------------------
+
+
