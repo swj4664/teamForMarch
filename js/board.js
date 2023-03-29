@@ -111,9 +111,8 @@ function updateNote(noteId, name, title, desc) {
 }
 
 
-let count = 0;
-let changeC = ''
-let a = ''
+let colorList = []
+
 addBtn.addEventListener("click", (e) => {
   e.preventDefault();
   
@@ -150,20 +149,20 @@ addBtn.addEventListener("click", (e) => {
     showNotes();
   }
 
+  // 방법. 다시 클릭하는 순간 컬러값이 변하기 때문에 클릭했을 때마다 컬러 값을 밖에 colorList배열변수를 만들어 변하지 않게 저장한다.
   let random = document.querySelectorAll(".note");
-  a = random
   let colorCode = "#" + Math.round(Math.random() * 0xffffff).toString(16);
-  changeC = colorCode
-  changeGo()
-  count++;
-});
-let colorList = ''
-function changeGo(){
-  colorList += a[count].style.backgroundColor = `${changeC},`;
-  let colorArr = colorList.split(',')
-  for(let i in colorArr){
-    a[i].style.backgroundColor = `${colorArr[i]}`
+
+  // 1. colorList에 push를 활용해 배열로 값을 넣는다. 클릭을 할 때마다 하나씩 컬러값(배열값)이 쌓인다.
+  colorList.push(colorCode)
+  
+  // 2. 배열변수인 colorList안의 컬러값들을 차례로 가져온 뒤, 메모를 나타내는 random변수도 차례로 가져와 같은 순서대로 넣는다.
+  // ex) for문을 활용 : random[1]에 colorList[1]값을 넣는다. / random[2]에 colorList[2]값 / random[3]에 colorList[3]값....
+  for(let i in colorList){
+    random[i].style.backgroundColor = `${colorList[i]}`
   }
-}
+});
+
+
 
 
