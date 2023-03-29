@@ -66,6 +66,12 @@ btn1.addEventListener("click", function () {
         alert("비밀번호를 입력하세요.");
         pw.focus();
     }
+    if (!regIdPw.test(us.value) && us.value !== "") {
+        alert("아이디를 다시 입력하세요.");
+    }
+    if (!regIdPw.test(pw.value) && pw.value !== "") {
+        alert("비밀번호를 다시 입력하세요.");
+    }
     return false;
 });
 
@@ -76,15 +82,15 @@ us.addEventListener("focusout", function () {
     if (!regIdPw.test(us.value)) {
         userror.innerText = "@아이디가 정확하지 않습니다.";
         userror.style.color = "red";
-        btn1.addEventListener("click", function () {
-                alert("아이디를 다시 입력하세요.");
-                us.focus();
-                return false;
-        });
+        // btn1.addEventListener("click", function () {
+        //     alert("아이디를 다시 입력하세요.");
+        //     us.focus();
+        //     return false;
+        // });
     } else {
         userror.innerText = "@아이디를 제대로 입력하셨습니다.";
         userror.style.color = "green";
-        return e.preventDefault();
+        // return e.preventDefault();
     }
 
     // if (!regIdPw.test(us.value)) {
@@ -98,15 +104,15 @@ pw.addEventListener("focusout", function () {
     if (!regIdPw.test(pw.value)) {
         pwderror.innerText = "@비밀번호가 정확하지 않습니다.";
         pwderror.style.color = "red";
-    btn1.addEventListener("click", function (e) {
-            alert("비밀번호를 다시 입력하세요.");
-            pw.focus();
+        // btn1.addEventListener("click", function () {
+        //     alert("비밀번호를 다시 입력하세요.");
+        //     pw.focus();
 
-    });
+        // });
     } else {
         pwderror.innerText = "@비밀번호를 제대로 입력하셨습니다.";
         pwderror.style.color = "green";
-        return e.preventDefault();
+        // return e.preventDefault();
     }
 });
 
