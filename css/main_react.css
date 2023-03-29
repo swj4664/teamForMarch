@@ -1,4 +1,7 @@
 @media only screen and (max-width: 1300px) {
+
+  
+
   .section1 {
     width: 1000px;
     max-height: 700px;
@@ -48,9 +51,27 @@
 }
 
 @media only screen and (max-width: 1100px) {
+
+  .header {
+    padding: 0.7rem 1rem;
+  }
+
   .wrap {
     height: 320vh;
   }
+
+  .header .login span {
+    display: none;
+  }
+
+  .header .logo {
+    display: none;
+  }
+
+  .header .logo2 {
+    display: block;
+  }
+
 
   .container {
     height: 160vh;

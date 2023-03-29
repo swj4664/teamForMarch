@@ -72,8 +72,12 @@ body {
   z-index: 9999;
 }
 
-.header .logo img {
-  width: 280px;
+.header .logo {
+  display: block;
+}
+
+.header .logo2 {
+  display: none;
 }
 
 .header .login:hover {
