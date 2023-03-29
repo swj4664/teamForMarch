@@ -55,44 +55,58 @@ const pw = document.getElementById("pw");
 const pwd = document.querySelector(".pwd");
 const userror = document.querySelector('.userror')
 const pwderror = document.querySelector('.pwderror')
-let regIdPw = /^[a-zA-Z0-9]{4,12}$/;
+let regIdPw = /^[a-zA-Z0-9]{4,13}$/;
 let values = regIdPw
 
-function er() {
-    btn1.addEventListener("click", function () {
-        if (us.value === "") {
-            alert("아이디를 입력하세요.");
-            us.focus();
-            return;
-        } else if (pw.value === "") {
-            alert("비밀번호를 입력하세요.");
-            pw.focus();
-            return;
-        }
-    });
-}
-er();
-
-
-
-us.addEventListener("keydown", function (event) {
-    if (us.value !== regIdPw && us.value > 5) {
-        return event.preventDefault();
-       
+btn1.addEventListener("click", function () {
+    if (us.value === "") {
+        alert("아이디를 입력하세요.");
+        us.focus();
+    } else if (pw.value === "") {
+        alert("비밀번호를 입력하세요.");
+        pw.focus();
     }
+    return false;
+});
 
+
+
+
+us.addEventListener("focusout", function () {
     if (!regIdPw.test(us.value)) {
         userror.innerText = "@아이디가 정확하지 않습니다.";
         userror.style.color = "red";
-        return false;
-    } 
+        btn1.addEventListener("click", function () {
+                alert("아이디를 다시 입력하세요.");
+                us.focus();
+                return false;
+        });
+    } else {
+        userror.innerText = "@아이디를 제대로 입력하셨습니다.";
+        userror.style.color = "green";
+        return e.preventDefault();
+    }
+
+    // if (!regIdPw.test(us.value)) {
+    //     userror.innerText = "@아이디가 정확하지 않습니다.";
+    //     userror.style.color = "red";
+    //     return false;
+    // } 
 });
 
-pw.addEventListener("keydown", function () {
+pw.addEventListener("focusout", function () {
     if (!regIdPw.test(pw.value)) {
         pwderror.innerText = "@비밀번호가 정확하지 않습니다.";
         pwderror.style.color = "red";
-        return false;
+    btn1.addEventListener("click", function (e) {
+            alert("비밀번호를 다시 입력하세요.");
+            pw.focus();
+
+    });
+    } else {
+        pwderror.innerText = "@비밀번호를 제대로 입력하셨습니다.";
+        pwderror.style.color = "green";
+        return e.preventDefault();
     }
 });
 
