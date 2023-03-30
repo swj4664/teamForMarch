@@ -6,17 +6,16 @@ const btn1 = document.querySelector(".button1");
 const btn2 = document.querySelector(".button2");
 const btns1 = document.querySelector(".sbutton1");
 const btns2 = document.querySelector(".sbutton2");
-const tex = document.querySelector('.login span')
-const icon = document.querySelector('.login i')
+const tex = document.querySelector(".login span");
+const icon = document.querySelector(".login i");
 login.addEventListener("click", function () {
     if ((loginPage2.style.display = "none")) {
         loginPage2.style.display = "block";
         loginPage1.style.display = "none";
     }
 
-    if($('.bgColor').removeClass('on')){
-        $('.bgColor').addClass('on')
-        $('.mainBtn').css('z-index',-9)
+    if ($(".bgColor").removeClass("on")) {
+        $(".bgColor").addClass("on");
     }
 });
 
@@ -43,28 +42,27 @@ const xmark2 = document.querySelector(".lXmark");
 
 xmark2.addEventListener("click", function () {
     loginPage2.style.display = "none";
-    $('.bgColor').removeClass('on')
+    $(".bgColor").removeClass("on");
 });
 
 xmark1.addEventListener("click", function () {
     loginPage1.style.display = "none";
-    $('.bgColor').removeClass('on')
+    $(".bgColor").removeClass("on");
 });
 
 // x마크 끝------------------------------------------------------------------------------------
 
 // 로그인 페이지 유효성 검사 ----------------------------------------------------------------
 
-
 const us = document.getElementById("us");
 const uswers = document.querySelector(".uswers");
 // console.log(us)
 const pw = document.getElementById("pw");
 const pwd = document.querySelector(".pwd");
-const userror = document.querySelector('.userror')
-const pwderror = document.querySelector('.pwderror')
+const userror = document.querySelector(".userror");
+const pwderror = document.querySelector(".pwderror");
 let regIdPw = /^[a-zA-Z0-9]{4,13}$/;
-let values = regIdPw
+let values = regIdPw;
 
 btn1.addEventListener("click", function () {
     if (us.value === "") {
@@ -85,31 +83,31 @@ btn1.addEventListener("click", function () {
         pw.focus();
     }
     if (regIdPw.test(us.value) && regIdPw.test(pw.value)) {
-        alert("로그인이 완료되었습니다.")
-        us.value = null
-        pw.value = null
-        userror.style.display = 'none'
-        pwderror.style.display = 'none'
+        alert("로그인이 완료되었습니다.");
+        us.value = null;
+        pw.value = null;
+        userror.style.display = "none";
+        pwderror.style.display = "none";
         loginPage2.style.display = "none";
-        tex.innerText = '로그아웃'
-       if($('.login i').hasClass('fa-solid fa-user')) {
-        $('.login i').removeClass('fa-solid fa-user')}
-      if($('.login i').removeClass('fa-solid fa-user')){
-        $('.login i').addClass('fa-solid fa-arrow-right-from-bracket')
+        tex.innerText = "로그아웃";
+        if ($(".login i").hasClass("fa-solid fa-user")) {
+            $(".login i").removeClass("fa-solid fa-user");
+        }
+        if ($(".login i").removeClass("fa-solid fa-user")) {
+            $(".login i").addClass("fa-solid fa-arrow-right-from-bracket");
         }
     }
 
-    tex.addEventListener('click', function () {
-        alert('로그아웃이 완료 되었습니다.')
-        tex.innerText = '로그인'
-        if($('.login i').removeClass('fa-solid fa-arrow-right-from-bracket')){
-            $('.login i').addClass('fa-solid fa-user')
-            }
+    tex.addEventListener("click", function () {
+        alert("로그아웃이 완료 되었습니다.");
+        tex.innerText = "로그인";
+        if ($(".login i").removeClass("fa-solid fa-arrow-right-from-bracket")) {
+            $(".login i").addClass("fa-solid fa-user");
+        }
         return false;
-    })
+    });
     return false;
 });
-
 
 us.addEventListener("focusout", function () {
     if (!regIdPw.test(us.value)) {
@@ -151,17 +149,16 @@ pw.addEventListener("focusout", function () {
 
 // 회원가입 유효성 검사 시작 ---------------------------------------------------------------------------------------------
 
-const us1 = document.querySelector('#us1')
-const pw1 = document.querySelector('#pw1')
-const em1 = document.querySelector('#em1')
-const ph1 = document.querySelector('#ph1')
-const userrors = document.querySelector('.userrors')
-const pwderrors = document.querySelector('.pwderrors')
-const emerrors = document.querySelector('.emerrors')
-const telerrors = document.querySelector('.telerrors')
-let regem = /^[a-zA-Z0-9]+@[a-zA-Z0-9]+$/
-let regph = /^01(?:0|1|[6-9])+(?:\d{3}|\d{4})+\d{4}$/
-
+const us1 = document.querySelector("#us1");
+const pw1 = document.querySelector("#pw1");
+const em1 = document.querySelector("#em1");
+const ph1 = document.querySelector("#ph1");
+const userrors = document.querySelector(".userrors");
+const pwderrors = document.querySelector(".pwderrors");
+const emerrors = document.querySelector(".emerrors");
+const telerrors = document.querySelector(".telerrors");
+let regem = /^[a-zA-Z0-9]+@[a-zA-Z0-9]+$/;
+let regph = /^01(?:0|1|[6-9])+(?:\d{3}|\d{4})+\d{4}$/;
 
 // console.log(userrors,pwderrors, emerrors, telerrors )
 
@@ -194,24 +191,26 @@ btns2.addEventListener("click", function () {
         alert("전화번호를 다시 입력하세요.");
     }
 
-    if (regIdPw.test(us1.value) && regIdPw.test(pw1.value) && regem.test(em1.value) && regph.test(ph1.value)) {
-        alert("회원가입이 완료되었습니다.")
-        us1.value = null
-        pw1.value = null
-        em1.value = null
-        ph1.value = null
-        userrors.style.display = 'none'
-        pwderrors.style.display = 'none'
-        emerrors.style.display = 'none'
-        telerrors.style.display = 'none'
+    if (
+        regIdPw.test(us1.value) &&
+        regIdPw.test(pw1.value) &&
+        regem.test(em1.value) &&
+        regph.test(ph1.value)
+    ) {
+        alert("회원가입이 완료되었습니다.");
+        us1.value = null;
+        pw1.value = null;
+        em1.value = null;
+        ph1.value = null;
+        userrors.style.display = "none";
+        pwderrors.style.display = "none";
+        emerrors.style.display = "none";
+        telerrors.style.display = "none";
         loginPage1.style.display = "none";
     }
 
     return false;
-
 });
-
-
 
 us1.addEventListener("focusout", function () {
     if (!regIdPw.test(us1.value)) {
