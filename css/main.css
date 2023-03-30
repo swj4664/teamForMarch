@@ -792,10 +792,10 @@ select {
 .section2 .article1 {
   position: absolute;
   width: 1200px;
-  height: 480px;
+  height: 400px;
   background: rgb(255, 255, 255);
   border-radius: 30px;
-  top: 37%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 30px;
@@ -816,24 +816,29 @@ select {
 
 /* .texts 시작 */
 .texts {
+  position: absolute;
   display: flex;
   align-items: center;
-  padding: 2rem;
+  color: white;
+  transform: translateY(-100px);
 }
+
+
 
 .texts h2 {
   font-size: 2.2rem;
+  color: white
 }
 
 .texts > span {
-  color: #262626;
+  color: white
 }
 
 .texts > div {
-  background-color: #262626;
+  background-color: white;
   width: 2px;
   height: 1.5rem;
-  margin: 0.01rem;
+  margin: 1rem;
 }
 
 .texts > img {
@@ -865,6 +870,10 @@ select {
   padding: 0.8rem 0;
   margin-bottom: 1rem;
   border-radius: 50px;
+}
+
+.tleft .best p {
+  color: #5707ff;
 }
 
 .tleft .hot > img {
@@ -901,7 +910,7 @@ select {
   display: flex;
   position: absolute;
   width: 100vw;
-  height: 250px;
+  height: 150px;
   bottom: 0;
   background-color: white;
   text-align: center;
