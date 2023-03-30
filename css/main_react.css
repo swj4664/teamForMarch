@@ -202,16 +202,16 @@
 
 @media only screen and (max-width: 625px) {
   .wrap {
-    height: 290vh;
+    height: 320vh;
   }
 
   .container1 {
-    height: 140vh;
+    height: 160vh;
     overflow: hidden;
   }
 
   .container2 {
-    height: 150vh;
+    height: 160vh;
     overflow: hidden;
   }
 
