@@ -68,47 +68,56 @@ btn1.addEventListener("click", function () {
     }
     if (!regIdPw.test(us.value) && us.value !== "") {
         alert("아이디를 다시 입력하세요.");
+        us.focus();
     }
     if (!regIdPw.test(pw.value) && pw.value !== "") {
         alert("비밀번호를 다시 입력하세요.");
+        pw.focus();
     }
+    if (regIdPw.test(us.value) && regIdPw.test(pw.value)) {
+        alert("로그인이 완료되었습니다.")
+        us.value = null
+        pw.value = null
+        userror.style.display = 'none'
+        pwderror.style.display = 'none'
+        loginPage2.style.display = "none";
+    } 
+
     return false;
 });
-
-
 
 
 us.addEventListener("focusout", function () {
     if (!regIdPw.test(us.value)) {
         userror.innerText = "@아이디가 정확하지 않습니다.";
         userror.style.color = "red";
-        // btn1.addEventListener("click", function () {
-        //     alert("아이디를 다시 입력하세요.");
-        //     us.focus();
-        //     return false;
-        // });
+        btn1.addEventListener("click", function () {
+            alert("아이디를 다시 입력하세요.");
+            us.focus();
+            return false;
+        });
     } else {
         userror.innerText = "@아이디를 제대로 입력하셨습니다.";
         userror.style.color = "green";
         // return e.preventDefault();
     }
 
-    // if (!regIdPw.test(us.value)) {
-    //     userror.innerText = "@아이디가 정확하지 않습니다.";
-    //     userror.style.color = "red";
-    //     return false;
-    // } 
+    if (!regIdPw.test(us.value)) {
+        userror.innerText = "@아이디가 정확하지 않습니다.";
+        userror.style.color = "red";
+        return false;
+    } 
 });
 
 pw.addEventListener("focusout", function () {
     if (!regIdPw.test(pw.value)) {
         pwderror.innerText = "@비밀번호가 정확하지 않습니다.";
         pwderror.style.color = "red";
-        // btn1.addEventListener("click", function () {
-        //     alert("비밀번호를 다시 입력하세요.");
-        //     pw.focus();
+        btn1.addEventListener("click", function () {
+            alert("비밀번호를 다시 입력하세요.");
+            pw.focus();
 
-        // });
+        });
     } else {
         pwderror.innerText = "@비밀번호를 제대로 입력하셨습니다.";
         pwderror.style.color = "green";
@@ -120,4 +129,140 @@ pw.addEventListener("focusout", function () {
 
 // 회원가입 유효성 검사 시작 ---------------------------------------------------------------------------------------------
 
+const us1 = document.querySelector('#us1')
+const pw1 = document.querySelector('#pw1')
+const em1 = document.querySelector('#em1')
+const ph1 = document.querySelector('#ph1')
+const userrors = document.querySelector('.userrors')
+const pwderrors = document.querySelector('.pwderrors')
+const emerrors = document.querySelector('.emerrors')
+const telerrors = document.querySelector('.telerrors')
+let regem = /^[a-zA-Z0-9]+@[a-zA-Z0-9]+$/
+let regph = /^01(?:0|1|[6-9])+(?:\d{3}|\d{4})+\d{4}$/
 
+
+// console.log(userrors,pwderrors, emerrors, telerrors )
+
+btns2.addEventListener("click", function () {
+    if (us1.value === "") {
+        alert("아이디를 입력하세요.");
+        us1.focus();
+    } else if (em1.value === "") {
+        alert("이메일을 입력하세요.");
+        em1.focus();
+    } else if (pw1.value === "") {
+        alert("비밀번호를 입력하세요.");
+        pw1.focus();
+    } else if (ph1.value === "") {
+        alert("전화번호를 입력하세요.");
+        ph1.focus();
+    }
+    if (!regIdPw.test(us1.value) && us1.value !== "") {
+        alert("아이디를 다시 입력하세요.");
+    }
+    if (!regem.test(em1.value) && em1.value !== "") {
+        alert("이메일을 다시 입력하세요.");
+    }
+
+    if (!regIdPw.test(pw1.value) && pw1.value !== "") {
+        alert("비밀번호를 다시 입력하세요.");
+    }
+
+    if (!regph.test(ph1.value) && ph1.value !== "") {
+        alert("전화번호를 다시 입력하세요.");
+    }
+
+    if (regIdPw.test(us1.value) && regIdPw.test(pw1.value) && regem.test(em1.value) && regph.test(ph1.value)) {
+        alert("회원가입이 완료되었습니다.")
+        us1.value = null
+        pw1.value = null
+        em1.value = null
+        ph1.value = null
+        userrors.style.display = 'none'
+        pwderrors.style.display = 'none'
+        emerrors.style.display = 'none'
+        telerrors.style.display = 'none'
+        loginPage1.style.display = "none";
+    }
+
+    return false;
+
+});
+
+
+
+us1.addEventListener("focusout", function () {
+    if (!regIdPw.test(us1.value)) {
+        userrors.innerText = "@아이디가 정확하지 않습니다.";
+        userrors.style.color = "red";
+        btn1.addEventListener("click", function () {
+            alert("아이디를 다시 입력하세요.");
+            us.focus();
+            return false;
+        });
+    } else {
+        userrors.innerText = "@아이디를 제대로 입력하셨습니다.";
+        userrors.style.color = "green";
+        // return e.preventDefault();
+    }
+
+    if (!regIdPw.test(us.value)) {
+        userror.innerText = "@아이디가 정확하지 않습니다.";
+        userror.style.color = "red";
+        return false;
+    } 
+});
+
+pw1.addEventListener("focusout", function () {
+    if (!regIdPw.test(pw1.value)) {
+        pwderrors.innerText = "@비밀번호가 정확하지 않습니다.";
+        pwderrors.style.color = "red";
+        btn1.addEventListener("click", function () {
+            alert("비밀번호를 다시 입력하세요.");
+            pw.focus();
+
+        });
+    } else {
+        pwderrors.innerText = "@비밀번호를 제대로 입력하셨습니다.";
+        pwderrors.style.color = "green";
+        // return e.preventDefault();
+    }
+});
+
+em1.addEventListener("focusout", function () {
+    if (!regem.test(em1.value)) {
+        emerrors.innerText = "@이메일이 정확하지 않습니다.";
+        emerrors.style.color = "red";
+        btn1.addEventListener("click", function () {
+            alert("아이디를 다시 입력하세요.");
+            us.focus();
+            return false;
+        });
+    } else {
+        emerrors.innerText = "@이메일을 제대로 입력하셨습니다.";
+        emerrors.style.color = "green";
+        // return e.preventDefault();
+    }
+
+    if (!regIdPw.test(us.value)) {
+        userror.innerText = "@아이디가 정확하지 않습니다.";
+        userror.style.color = "red";
+        return false;
+    } 
+});
+
+ph1.addEventListener("focusout", function () {
+    if (!regph.test(ph1.value)) {
+        telerrors.innerText = "@전화번호가 정확하지 않습니다.";
+        telerrors.style.color = "red";
+        btn1.addEventListener("click", function () {
+            alert("비밀번호를 다시 입력하세요.");
+            pw.focus();
+
+        });
+    } else {
+        telerrors.innerText = "@전화번호를 제대로 입력하셨습니다.";
+        telerrors.style.color = "green";
+        // return e.preventDefault();
+    }
+});
