@@ -1,8 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   list-style: none;
+}
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
 }
 
 a {
@@ -779,7 +785,6 @@ select {
 .section2 {
   width: 100vw;
   height: 100vh;
-  max-height: 700px;
   background: rgba(87, 7, 255, 0.9);
   margin-top: 65.5px;
   position: relative;
@@ -788,10 +793,10 @@ select {
 .section2 .article1 {
   position: absolute;
   width: 1200px;
-  height: 600px;
+  height: 480px;
   background: rgb(255, 255, 255);
   border-radius: 30px;
-  top: 50%;
+  top: 37%;
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 30px;
@@ -887,6 +892,7 @@ span {
 .mright > img {
   width: 300px;
   height: 300px;
+  object-fit: cover;
   padding: 1rem;
   border-radius: 30px;
 }
@@ -894,3 +900,46 @@ span {
 .mright .imgs1 {
   position: relative;
 }
+
+
+/* 푸터footer */
+
+.footer {
+  display: flex;
+  position: absolute;
+  width: 100vw;
+  height: 250px;
+  bottom: 0;
+  background-color: white;
+  text-align: center;
+  bottom: 65.5px;
+  justify-content: center;
+  align-items: center;
+}
+
+.footerContent {
+  display: flex;
+  width: 80%;
+}
+
+.footer .fTop {
+  display: flex;
+  flex: 1 1 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer .footerContent .fTop ul li {
+  display: inline-block;
+  font-size: 25px;
+  color: #5707ff;
+  padding: 20px;
+}
+
+.footer .fBottom {
+  display: flex;
+  flex: 1 1 0;
+  justify-content: center;
+  align-items: center;
+}
+
