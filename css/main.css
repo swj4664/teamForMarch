@@ -737,7 +737,6 @@ select {
   text-align: center;
   display: inline-block;
   font-size: 30px;
-  color: #3a3a3a;
   font-weight: 600;
 }
 
@@ -820,12 +819,6 @@ select {
   display: flex;
   align-items: center;
   padding: 2rem;
-}
-
-.texts > img,
-h2,
-span {
-  padding: 0.5rem;
 }
 
 .texts h2 {
