@@ -1,4 +1,3 @@
-
 /* loginPage1  여기는 회원가입 */
 .loginPage1 {
     display: none;
@@ -13,6 +12,10 @@
     padding: 9rem 6rem;
     border-radius: 30px;
     border: 1px dotted rgba(74, 74, 238, 0.712);
+}
+
+.loginPage2 .inputgroup {
+    position: relative;
 }
 
 .loginPage1 h2 {
@@ -81,8 +84,29 @@ input {
     cursor: pointer;
 }
 
+.userrors {
+    position: absolute;
+    top: 36.5%;
+    left: 17%;
+}
 
+.pwderrors {
+    position: absolute;
+    top: 54.8%;
+    left: 17%;
+}
 
+.emerrors {
+    position: absolute;
+    top: 45.7%;
+    left: 17%;
+}
+
+.telerrors {
+    position: absolute;
+    top: 64.5%;
+    left: 17%;
+}
 
 /* loginPage2 여기는 로그인*/
 
@@ -171,13 +195,23 @@ input {
 }
 
 .userror {
-    position : absolute;
+    position: absolute;
     top: 30%;
-    left : 3%;
+    left: 3%;
 }
 
 .pwderror {
-    position : absolute;
+    position: absolute;
     top: 75%;
-    left : 3%;
+    left: 3%;
+}
+
+/* 로그인 시 뒷배경 */
+
+.bgColor.on {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 100%;
+    height: 200vh;
+    z-index: 9;
 }
