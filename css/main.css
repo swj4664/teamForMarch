@@ -27,7 +27,7 @@ body {
   z-index: 999;
 }
 
-.mainBtn > li {
+.mainBtn>li {
   cursor: pointer;
   list-style: none;
   width: 15px;
@@ -602,7 +602,7 @@ select {
   cursor: pointer;
 }
 
-.pre > button {
+.pre>button {
   position: absolute;
   background: none;
   border: none;
@@ -630,7 +630,7 @@ select {
   cursor: pointer;
 }
 
-.next > button {
+.next>button {
   background: none;
   border: none;
   top: 50%;
@@ -657,7 +657,7 @@ select {
   cursor: pointer;
 }
 
-.stop > button {
+.stop>button {
   background: none;
   border: none;
   top: 50%;
@@ -830,18 +830,18 @@ select {
   color: white
 }
 
-.texts > span {
+.texts>span {
   color: white
 }
 
-.texts > div {
+.texts>div {
   background-color: white;
   width: 2px;
   height: 1.5rem;
   margin: 1rem;
 }
 
-.texts > img {
+.texts>img {
   width: 5rem;
   height: 5rem;
 }
@@ -874,13 +874,14 @@ select {
 
 .tleft .best p {
   color: #5707ff;
+  padding: 20px;
 }
 
-.tleft .hot > img {
+.tleft .hot>img {
   width: 40px;
 }
 
-.tleft .best > p {
+.tleft .best>p {
   cursor: pointer;
 }
 
@@ -891,7 +892,7 @@ select {
   position: relative;
 }
 
-.mright > img {
+.mright>img {
   width: 300px;
   height: 300px;
   object-fit: cover;
@@ -944,4 +945,3 @@ select {
   justify-content: center;
   align-items: center;
 }
-
