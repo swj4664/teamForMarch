@@ -168,6 +168,7 @@ function sebu(city) {
 }
 
 // 시도 목록을 button 상자에 표시하는 함수
+let button2 = ""
 function useData(globalData) {
   let list = globalData.map((a, b) => {
     let sidoList = a.sidoName.split(" ");
@@ -178,14 +179,20 @@ function useData(globalData) {
   cityIndex.sort();
 
   let button = "";
-  let btnAll = "";
+  
 
   cityIndex.map((value) => {
     button += `<option id="btnn" value="${value}">${value}</option>`;
   });
 
-  $("#btn").html(button);
+  button2 = button
 }
+$('#btn').click(()=>{
+  $('#btn').html(button2)
+})
+
+
+
 
 //이벤트
 $("#detail").change(function () {
@@ -201,6 +208,7 @@ $("#btn").click((e) => {
   sebu(city);
   $(this).addClass("on");
   map.getLevel = 10;
+  
 });
 
 var level = map.getLevel();

@@ -35,9 +35,8 @@ if (window.innerWidth > 1100) {
     imgBox.style.transition = `all 1s`;
     if (count > 0) {
       count--;
-      document.querySelector(".imgBox").style.transform = `translate(${
-        count * -450
-      }px)`;
+      document.querySelector(".imgBox").style.transform = `translate(${count * -450
+        }px)`;
       btnAll.forEach((i) => (i.style.background = "rgb(255, 255, 255, .5)"));
       btnAll[count].style.background = "rgb(255, 255, 255, 1)";
     } else if (count === 0) {
@@ -55,9 +54,8 @@ if (window.innerWidth > 1100) {
     imgBox.style.transition = `all 1s`;
     if (count < imgWrap.length - 1) {
       count++;
-      document.querySelector(".imgBox").style.transform = `translate(${
-        count * -450
-      }px)`;
+      document.querySelector(".imgBox").style.transform = `translate(${count * -450
+        }px)`;
       btnAll.forEach((i) => (i.style.background = "rgb(255, 255, 255, .5)"));
       btnAll[count].style.background = "rgb(255, 255, 255, 1)";
     } else if (count === imgWrap.length - 1) {
@@ -96,9 +94,8 @@ if (window.innerWidth <= 625) {
     imgBox.style.transition = `all 1s`;
     if (count > 0) {
       count--;
-      document.querySelector(".imgBox").style.transform = `translate(${
-        count * -280
-      }px)`;
+      document.querySelector(".imgBox").style.transform = `translate(${count * -280
+        }px)`;
       btnAll.forEach((i) => (i.style.background = "rgb(255, 255, 255, .5)"));
       btnAll[count].style.background = "rgb(255, 255, 255, 1)";
     } else if (count === 0) {
@@ -116,9 +113,8 @@ if (window.innerWidth <= 625) {
     imgBox.style.transition = `all 1s`;
     if (count < imgWrap.length - 1) {
       count++;
-      document.querySelector(".imgBox").style.transform = `translate(${
-        count * -280
-      }px)`;
+      document.querySelector(".imgBox").style.transform = `translate(${count * -280
+        }px)`;
       btnAll.forEach((i) => (i.style.background = "rgb(255, 255, 255, .5)"));
       btnAll[count].style.background = "rgb(255, 255, 255, 1)";
     } else if (count === imgWrap.length - 1) {
@@ -180,6 +176,7 @@ if (window.innerWidth > 1100) {
   const mainBtn = document.querySelectorAll(".mainBtn > li");
   const target = document.querySelector(".container");
   const target_top = target.getBoundingClientRect().height;
+  const mapHover = document.querySelector('#map')
 
   let forSlide = 1;
   mainBtn.forEach((i) => {
@@ -193,24 +190,33 @@ if (window.innerWidth > 1100) {
   });
   mainBtn[0].style.background = "rgb(191, 7, 255, 1)";
   // 스크롤이벤트
-  for (let i in imgBoxAll) var mHtml = $("html");
+  // for (let i in imgBoxAll) 
+  var mHtml = $("html");
   // 새로고침시 원래자리로 돌아옴
   mHtml.animate({ scrollTop: 0 }, 500);
 
+
   $(window).on("wheel", function (e) {
-    if (mHtml.is(":animated")) return;
-    if (e.originalEvent.deltaY > 0) {
-      if (forSlide == 2) return;
-      mainBtn.forEach((i) => (i.style.background = "rgb(191, 7, 255, .3)"));
-      mainBtn[forSlide].style.background = "rgb(191, 7, 255, 1)";
-      forSlide++;
-    } else if (e.originalEvent.deltaY < 0) {
-      if (forSlide == 1) return;
-      mainBtn.forEach((i) => (i.style.background = "rgb(191, 7, 255, .3)"));
-      mainBtn[forSlide - 2].style.background = "rgb(191, 7, 255, 1)";
-      forSlide--;
+    if (e.originalEvent.deltaY != 0) {
+      // if (mHtml.is(":animated"));
+      if (e.originalEvent.deltaY > 0) {
+        if (forSlide == 2) return;
+        mainBtn.forEach((i) => (i.style.background = "rgb(191, 7, 255, .3)"));
+        mainBtn[forSlide].style.background = "rgb(191, 7, 255, 1)";
+        forSlide++;
+      } else if (e.originalEvent.deltaY < 0) {
+        if (forSlide == 1) return;
+        mainBtn.forEach((i) => (i.style.background = "rgb(191, 7, 255, .3)"));
+        mainBtn[forSlide - 2].style.background = "rgb(191, 7, 255, 1)";
+        forSlide--;
+      }
+      var posTop = (forSlide - 1) * target_top;
+      mHtml.animate({ scrollTop: posTop });
     }
-    var posTop = (forSlide - 1) * target_top;
-    mHtml.animate({ scrollTop: posTop });
-  });
+  })
+
+  $('#map').on("wheel", function(e){
+    e.stopPropagation()
+  })
 }
+
