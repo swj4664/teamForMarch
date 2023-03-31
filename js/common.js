@@ -22,7 +22,7 @@ const headerHome =
 `
 <ul class="homewrap">
     <li>여행정보</li>
-    <li><i class="fa-solid fa-house"></i></li>
+    <li><a href="index.html"><i class="fa-solid fa-house"></i></a></li>
     <li><a href="board.html">게시판</a></li>
 </ul>
 `
