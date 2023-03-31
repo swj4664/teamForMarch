@@ -7,10 +7,10 @@ body.prepend(header)
 header.after(homeDiv)
 
 
-const headerStyle = `<a class="logo" href=""
+const headerStyle = `<a class="logo" href="index.html"
 ><img src="./img/logo.svg" alt="#"
 /></a>
-<a class="logo2" href=""
+<a class="logo2" href="index.html"
 ><img src="./img/logoMobile.svg" alt="#"
 /></a>
 <div class="login">
