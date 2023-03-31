@@ -10,7 +10,7 @@ let btn = document.querySelector(".img1"); // 버튼 클릭 함수 실행을 위
 let btnAll = document.querySelectorAll(".img1"); // 버튼 클릭 함수 실행을 위한 변수
 let count = 0;
 
-if (window.innerWidth > 1100) {
+if (window.innerWidth > 625) {
   document.querySelector(".imgBox").style.left = "-450px";
 
   function imgSlideShow() {
@@ -40,7 +40,6 @@ if (window.innerWidth > 1100) {
       btnAll.forEach((i) => (i.style.background = "rgb(255, 255, 255, .5)"));
       btnAll[count].style.background = "rgb(255, 255, 255, 1)";
     } else if (count === 0) {
-      console.log("asd");
       imgBox.style.transform = `translate(450px)`;
       setTimeout(() => {
         imgBox.style.transition = `0s`;
@@ -99,7 +98,6 @@ if (window.innerWidth <= 625) {
       btnAll.forEach((i) => (i.style.background = "rgb(255, 255, 255, .5)"));
       btnAll[count].style.background = "rgb(255, 255, 255, 1)";
     } else if (count === 0) {
-      console.log("asd");
       imgBox.style.transform = `translate(280)`;
       setTimeout(() => {
         imgBox.style.transition = `0s`;

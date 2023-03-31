@@ -20,7 +20,6 @@ function mapOpen() {
 
     }
 }
-
 function mapClose() {
     location.reload(true); //새로고침
     open.style.zIndex = '0'
