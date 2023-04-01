@@ -1,6 +1,7 @@
 let imgBox = document.querySelector(".imgBox");
 let imgBoxAll = document.querySelectorAll(".imgBox");
 const imgWrap = document.querySelectorAll(".img1");
+const article1 = document.querySelector('.article1')
 let cloneFirst = imgWrap[0].cloneNode(true); // 요소 복사
 let cloneLast = imgWrap[imgWrap.length - 1].cloneNode(true);
 imgBox.insertBefore(cloneLast, imgWrap[0]);
@@ -9,6 +10,9 @@ imgBox.appendChild(cloneFirst);
 let btn = document.querySelector(".img1"); // 버튼 클릭 함수 실행을 위한 변수
 let btnAll = document.querySelectorAll(".img1"); // 버튼 클릭 함수 실행을 위한 변수
 let count = 0;
+
+
+
 
 if (window.innerWidth > 625) {
   document.querySelector(".imgBox").style.left = "-450px";
@@ -169,12 +173,15 @@ function stopSlide() {
   }
 }
 
+
+
 // 스크롤 슬라이드
 if (window.innerWidth > 1100) {
   const mainBtn = document.querySelectorAll(".mainBtn > li");
   const target = document.querySelector(".container");
   const target_top = target.getBoundingClientRect().height;
   const mapHover = document.querySelector('#map')
+
 
   let forSlide = 1;
   mainBtn.forEach((i) => {
@@ -201,11 +208,13 @@ if (window.innerWidth > 1100) {
         if (forSlide == 2) return;
         mainBtn.forEach((i) => (i.style.background = "rgb(191, 7, 255, .3)"));
         mainBtn[forSlide].style.background = "rgb(191, 7, 255, 1)";
+        article1.classList.add('on')
         forSlide++;
       } else if (e.originalEvent.deltaY < 0) {
         if (forSlide == 1) return;
         mainBtn.forEach((i) => (i.style.background = "rgb(191, 7, 255, .3)"));
         mainBtn[forSlide - 2].style.background = "rgb(191, 7, 255, 1)";
+        article1.classList.remove('on')
         forSlide--;
       }
       var posTop = (forSlide - 1) * target_top;
@@ -218,3 +227,6 @@ if (window.innerWidth > 1100) {
   })
 }
 
+if (window.innerWidth <= 1100) {
+article1.classList.remove('on')
+}
