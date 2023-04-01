@@ -1,5 +1,6 @@
 @media only screen and (max-width: 1300px) {
 
+  
 
   .section1 {
     width: 1000px;
@@ -47,95 +48,16 @@
     align-items: center;
     padding-right: 100px;
   }
-
-  .section2 .article1 {
-    position: absolute;
-    width: 1000px;
-    height: 400px;
-    background: rgb(255, 255, 255);
-    border-radius: 30px;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 30px;
-  }
-
-  .section2 .article1.on {
-    opacity: 1;
-    position: absolute;
-    width: 1000px;
-    height: 400px;
-    background: rgb(255, 255, 255);
-    border-radius: 30px;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 30px;
-    transition-delay: .4s;
-  }
-
-  .tleft {
-    display: flex;
-    padding: 25px;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    justify-content: space-around;
-  }
-
-  .mright {
-    display: flex;
-    position: relative;
-    width: 720px;
-  }
-
-  .mright>img {
-    width: 240px;
-    height: 300px;
-    object-fit: cover;
-    padding: .5rem;
-    border-radius: 30px;
-  }
-
 }
 
 @media only screen and (max-width: 1100px) {
 
-  .footer {
-    display: flex;
-    position: absolute;
-    width: 100vw;
-    height: 150px;
-    bottom: 0;
-    background-color: white;
-    text-align: center;
-    bottom: 0;
-  }
-
-
-  .left2 {
-    flex: 1 1 0;
-    display: flex;
-    flex-direction: column;
-    padding: 50px 40px;
-    align-items: center;
-    letter-spacing: 0.05em;
-    line-height: 2em;
-    font-size: 20px;
-  }
-
-  .left2 .clickAlram {
-    position: relative;
-    top: 15%;
-    transform: translateY(-50%);
-    font-size: 23px;
-    text-align: center;
-    line-height: 1.5em;
-  }
-
-
   .header {
     padding: 0.7rem 1rem;
+  }
+
+  .wrap {
+    height: 320vh;
   }
 
   .header .login span {
@@ -151,20 +73,14 @@
   }
 
 
-  .container1 {
-    height: 1500px;
-    overflow: hidden;
-  }
-
-  .container2 {
-    height: 1800px;
+  .container {
+    height: 160vh;
     overflow: hidden;
   }
 
   .mainBtn {
     display: none;
   }
-
 
   .section1 {
     width: 85%;
@@ -188,7 +104,7 @@
     display: flex;
     flex-direction: column;
     position: absolute;
-    width: 1200px;
+    width: 1300px;
     margin: 0 auto;
     padding: 0.1rem 5rem;
     top: 50%;
@@ -238,7 +154,7 @@
     align-items: center;
     padding-right: 0;
     order: 1;
-    padding-bottom: 100px;
+    padding-bottom: 30px;
   }
 
   .pre {
@@ -280,80 +196,22 @@
   }
 
   .section2 {
-    width: 100vw;
-    height: 1800px;
-    background: rgba(87, 7, 255, 0.9);
     margin-top: 0;
-    position: relative;
   }
-
-  .section2 .article1 {
-    opacity: 1;
-    position: absolute;
-    width: 85%;
-    height: 1200px;
-    background: rgb(255, 255, 255);
-    border-radius: 30px;
-    top: 48%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 30px;
-  }
-
-  .swrap {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .mright {
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-  }
-
-  .mright>img {
-    width: 130%;
-    height: 250px;
-    object-fit: cover;
-    padding: .5rem;
-    border-radius: 30px;
-  }
-
-  .texts {
-    display: flex;
-    align-items: center;
-    width: 480px;
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, -170px);
-  }
-
-  .texts>img,
-  h2,
-  span {
-    padding: 0.5rem;
-  }
-
-  .texts h2 {
-    font-size: 2.2rem;
-  }
-
 }
 
 @media only screen and (max-width: 625px) {
   .wrap {
-    height: 320vh;
+    height: 290vh;
   }
 
   .container1 {
-    height: 1300px;
+    height: 140vh;
     overflow: hidden;
   }
 
   .container2 {
-    height: 1800px;
+    height: 150vh;
     overflow: hidden;
   }
 
@@ -493,9 +351,9 @@
 
   .inner2 {
     flex-direction: column;
-    top: 50%;
+    top: 5%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, 0%);
   }
 
   .left2 .tempInfo {
@@ -513,40 +371,5 @@
     overflow: hidden;
     border-radius: 30px 30px 30px 30px;
     box-shadow: 10px 10px 30px rgba(0, 0, 0, 0);
-  }
-
-  .texts {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 480px;
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, -250px);
-  }
-
-  .mright>img {
-    width: 130%;
-    height: 250px;
-    object-fit: cover;
-    padding: 1rem;
-    border-radius: 30px;
-  }
-
-  .texts>img,
-  h2,
-  span {
-    padding: 0.5rem;
-  }
-
-  .texts h2 {
-    font-size: 2.2rem;
-  }
-
-  .footer .footerContent .fTop ul li {
-    display: inline-block;
-    font-size: 25px;
-    color: #5707ff;
-    padding: 10px;
   }
 }
