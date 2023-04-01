@@ -190,10 +190,11 @@
                             <form action="#">
                                 <input id="travelSearch"
                                     type="search" onkeyup="if(window.event.keyCode==13){searchTravel()}"
+                                    
                                     placeholder="원하는 여행상품을 찾아보세요."
                                 />
                                 <div class="userror"></div>
-                                <a href="#"
+                                <a href="#" onclick="searchTravel()"
                                     ><i class="fa-solid fa-magnifying-glass"></i
                                 ></a>
                             </form>
