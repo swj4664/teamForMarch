@@ -12,6 +12,8 @@
         <link rel="stylesheet" href="./css/main.css" />
         <link rel="stylesheet" href="./css/main_react.css" />
         <link rel="stylesheet" href="./css/style.css" />
+        <link rel="stylesheet" href="./css/search.css" />
+        <link rel="stylesheet" href="./css/search_react.css" />
         <link rel="stylesheet" href="./css/login.css" />
         <link rel="stylesheet" href="./css/login_react.css" />
         <script src="./js/jquery-1.12.4.min.js"></script>
@@ -19,12 +21,55 @@
 
     <body>
         <div class="bgColor"></div>
+        
         <div class="wrap">
             <div class="mainBtn">
                 <li value="1"><a href=""></a></li>
                 <li value="2"><a href=""></a></li>
             </div>
             <div class="container container1">
+                <div class="wrapWeather">
+                    <div class="bg"></div>
+                    <div class="containerWeather">
+                        <div class="leftInfo">
+                            <div class="title">
+                                <h2>부산 마린시티</h2>
+                                <p>서울 강남구 abc로 가나다빌딩 12-3</p>
+                            </div>
+                            <div class="weather">
+                                <div class="w_group">
+                                    <div class="w_content w1">
+                                        <h3>오늘</h3>
+                                        <i class="fa-solid fa-sun"></i>
+                                        <p>14°C</p>
+                                    </div>
+                                    <div class="w_content w2">
+                                        <h3>내일</h3>
+                                        <i class="fa-solid fa-cloud-showers-heavy"></i>
+                                        <p>11°C</p>
+                                    </div>
+                                    <div class="w_content w3">
+                                        <h3>모래</h3>
+                                        <i class="fa-solid fa-cloud"></i>
+                                        <p>13°C</p>
+                                    </div>
+                                </div >
+                                <div class="fee">입장료 : &nbsp;&nbsp; <span>0</span> &nbsp;₩</div>
+                            </div>
+                        </div>
+                        <div class="rightInfo">
+                            <div class="bigImg">
+                                <img src="./img/seoul1.png" alt="" />
+                            </div>
+                            <div class="smallImg">
+                                <img src="./img/seoul1.png" alt="" />
+                                <img src="./img/seoul2.png" alt="" />
+                                <img src="./img/seoul3.png" alt="" />
+                            </div>
+                        </div>
+                        <div class="cancel"><i class="fa-solid fa-xmark"></i></div>
+                    </div>
+                </div>
                 <div class="loginPage1">
                     <h2>회원가입</h2>
                     <form>
@@ -143,8 +188,8 @@
                                 찾고 계신가요?
                             </h2>
                             <form action="#">
-                                <input
-                                    type="search"
+                                <input id="travelSearch"
+                                    type="search" onkeyup="if(window.event.keyCode==13){searchTravel()}"
                                     placeholder="원하는 여행상품을 찾아보세요."
                                 />
                                 <div class="userror"></div>
@@ -330,5 +375,6 @@
         <script src="./js/login.js"></script>
         <script src="./js/map.js"></script>
         <script src="./js/random.js"></script>
+        <script src="./js/search.js"></script>
     </body>
 </html>
