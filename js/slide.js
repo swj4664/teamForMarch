@@ -180,20 +180,25 @@ if (window.innerWidth > 1100) {
   const mainBtn = document.querySelectorAll(".mainBtn > li");
   const target = document.querySelector(".container");
   const target_top = target.getBoundingClientRect().height;
-  const mapHover = document.querySelector('#map')
+  mainBtn[0].style.background = "rgb(191, 7, 255, 1)";
 
 
   let forSlide = 1;
   mainBtn.forEach((i) => {
-    i.addEventListener("click", (e) => {
+    i.addEventListener("click", () => {
       const num = i.value;
       forSlide = num;
       mHtml.animate({ scrollTop: (num - 1) * target_top });
       mainBtn.forEach((i) => (i.style.background = "rgb(191, 7, 255, .3)"));
       mainBtn[forSlide - 1].style.background = "rgb(191, 7, 255, 1)";
+      if (forSlide == 2) {
+        article1.classList.add('on')
+      } else {
+        article1.classList.remove('on')
+      }
     });
   });
-  mainBtn[0].style.background = "rgb(191, 7, 255, 1)";
+
   // 스크롤이벤트
   // for (let i in imgBoxAll) 
   var mHtml = $("html");
@@ -222,11 +227,41 @@ if (window.innerWidth > 1100) {
     }
   })
 
-  $('#map').on("wheel", function(e){
+  $('#map').on("wheel", function (e) {
     e.stopPropagation()
+  })
+
+
+
+  let target2 = document.querySelector(".section2");
+  let targetTop = target2.getBoundingClientRect().top + target2.clientHeight / 5;
+
+  $(window).on("scroll", function () {
+    let sct = $(this).scrollTop() + $(this).height();
+    if (sct >= targetTop) {
+      mainBtn.forEach((i) => (i.style.background = "rgb(191, 7, 255, .3)"));
+      mainBtn[1].style.background = "rgb(191, 7, 255, 1)";
+      article1.classList.add('on')
+    } else {
+      mainBtn.forEach((i) => (i.style.background = "rgb(191, 7, 255, .3)"));
+      mainBtn[0].style.background = "rgb(191, 7, 255, 1)";
+      article1.classList.remove('on')
+    }
   })
 }
 
+
 if (window.innerWidth <= 1100) {
-article1.classList.remove('on')
+  article1.classList.remove('on')
+
+  $(window).on("scroll", function (e) {
+    let sct = $(this).scrollTop() + $(this).height();
+    if (sct > targetTop) {
+      article1.classList.add('on')
+    } else {
+      article1.classList.remove('on')
+    }
+  })
 }
+
+

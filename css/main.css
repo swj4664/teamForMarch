@@ -848,7 +848,7 @@ select {
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 30px;
-  transition-delay: .4s;
+  transition-delay: .2s;
 }
 
 .section2 .article1 .articleContents {

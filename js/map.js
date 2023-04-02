@@ -31,4 +31,3 @@ function mapClose() {
     open.style.zIndex = '0'
     inner.style.display = 'flex'
 }
-
