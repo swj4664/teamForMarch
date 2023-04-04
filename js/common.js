@@ -25,7 +25,7 @@ const headerStyle = `<a class="logo" href="index.html"
 const headerHome =
     `
 <ul class="homewrap">
-    <li>여행정보</li>
+    <li><a href="info.html">여행정보</a></li>
     <li><i class="fa-solid fa-house"></i></li>
     <li><a href="board.html">게시판</a></li>
 </ul>

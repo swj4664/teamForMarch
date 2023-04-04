@@ -12,6 +12,10 @@ body {
   overflow-x: hidden;
 }
 
+body::-webkit-scrollbar {
+  display: none;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -818,7 +822,6 @@ select {
   width: 100vw;
   height: 100vh;
   background: rgba(87, 7, 255, 0.9);
-  margin-top: 65.5px;
   position: relative;
 }
 
@@ -844,7 +847,7 @@ select {
   height: 400px;
   background: rgb(255, 255, 255);
   border-radius: 30px;
-  top: 40%;
+  top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 30px;
@@ -1019,7 +1022,6 @@ select {
   bottom: 0;
   background-color: white;
   text-align: center;
-  bottom: 65.5px;
   justify-content: center;
   align-items: center;
 }

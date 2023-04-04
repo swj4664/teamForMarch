@@ -236,32 +236,32 @@ if (window.innerWidth > 1100) {
   let target2 = document.querySelector(".section2");
   let targetTop = target2.getBoundingClientRect().top + target2.clientHeight / 5;
 
-  $(window).on("scroll", function () {
-    let sct = $(this).scrollTop() + $(this).height();
-    if (sct >= targetTop) {
-      mainBtn.forEach((i) => (i.style.background = "rgb(191, 7, 255, .3)"));
-      mainBtn[1].style.background = "rgb(191, 7, 255, 1)";
-      article1.classList.add('on')
-    } else {
-      mainBtn.forEach((i) => (i.style.background = "rgb(191, 7, 255, .3)"));
-      mainBtn[0].style.background = "rgb(191, 7, 255, 1)";
-      article1.classList.remove('on')
-    }
-  })
+  // $(window).on("scroll", function () {
+  //   let sct = $(this).scrollTop() + $(this).height();
+  //   if (sct >= targetTop) {
+  //     mainBtn.forEach((i) => (i.style.background = "rgb(191, 7, 255, .3)"));
+  //     mainBtn[1].style.background = "rgb(191, 7, 255, 1)";
+  //     article1.classList.add('on')
+  //   } else {
+  //     mainBtn.forEach((i) => (i.style.background = "rgb(191, 7, 255, .3)"));
+  //     mainBtn[0].style.background = "rgb(191, 7, 255, 1)";
+  //     article1.classList.remove('on')
+  //   }
+  // })
 }
 
 
 if (window.innerWidth <= 1100) {
   article1.classList.remove('on')
 
-  $(window).on("scroll", function (e) {
-    let sct = $(this).scrollTop() + $(this).height();
-    if (sct > targetTop) {
-      article1.classList.add('on')
-    } else {
-      article1.classList.remove('on')
-    }
-  })
+  // $(window).on("scroll", function (e) {
+  //   let sct = $(this).scrollTop() + $(this).height();
+  //   if (sct > targetTop) {
+  //     article1.classList.add('on')
+  //   } else {
+  //     article1.classList.remove('on')
+  //   }
+  // })
 }
 
 
