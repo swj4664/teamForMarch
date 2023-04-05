@@ -441,7 +441,18 @@ section {
   font-size: 0.9rem;
   color: white;
 }
-
+@media (max-width: 1730px) {
+  .sub_title {
+    font-size: 0.9rem;
+    color: #3a3a3a;
+    display: none;
+  }
+}
+@media (max-width: 1200px) {
+  .main_title {
+    display: none;
+  }
+}
 /* @media (max-width: 1100px) {
   .skill_container {
     width: 100%;

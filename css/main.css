@@ -1111,3 +1111,43 @@ select {
   justify-content: center;
   align-items: center;
 }
+
+/* 푸터footer2 */
+
+.footer2 {
+  display: flex;
+  position: absolute;
+  width: 100vw;
+  height: 150px;
+  bottom: -250px;
+  background-color: white;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.footerContent {
+  display: flex;
+  width: 80%;
+}
+
+.footer2 .fTop {
+  display: flex;
+  flex: 1 1 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer2 .footerContent .fTop ul li {
+  display: inline-block;
+  font-size: 25px;
+  color: #5707ff;
+  padding: 20px;
+}
+
+.footer2 .fBottom {
+  display: flex;
+  flex: 1 1 0;
+  justify-content: center;
+  align-items: center;
+}
