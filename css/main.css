@@ -993,40 +993,49 @@ select {
 .mright .img1:hover::after {
   display: block;
   position: absolute;
+  font-size: 30px;
   top: 50%;
   transform: translateY(-50%);
-  content: '';
-  background: black;
-  opacity: .3;
+  color : white;
+  content: '관광명소1';
+  background: hsl(0, 0%, 0%, .3);
   width: 280px;
   height: 280px;
   border-radius: 30px;
+  text-align: center;
+  line-height: 280px;
 }
 
 .mright .img2:hover::after {
   display: block;
   position: absolute;
+  font-size: 30px;
   top: 50%;
   transform: translateY(-50%);
-  content: '';
-  background: black;
-  opacity: .3;
+  color : white;
+  content: '관광명소2';
+  background: hsl(0, 0%, 0%, .3);
   width: 280px;
   height: 280px;
   border-radius: 30px;
+  text-align: center;
+  line-height: 280px;
 }
 
 .mright .img3:hover::after {
   display: block;
   position: absolute;
+  font-size: 30px;
   top: 50%;
   transform: translateY(-50%);
-  content: '';
-  background: black;
-  opacity: .3;
+  color : white;
+  content: '관광명소3';
+  background: hsl(0, 0%, 0%, .3);
   width: 280px;
   height: 280px;
   border-radius: 30px;
+  text-align: center;
+  line-height: 280px;
 }
 
 .mright .imgRandom img {
