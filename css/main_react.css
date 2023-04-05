@@ -89,13 +89,62 @@
     width: 720px;
   }
 
-  .mright>img {
+  .mright>.imgRandom {
     width: 240px;
     height: 300px;
     object-fit: cover;
-    padding: .5rem;
+    padding: 10px;
     border-radius: 30px;
   }
+
+  
+.mright .img1:hover::after {
+  display: block;
+  position: absolute;
+  font-size: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  color : white;
+  content: '관광명소1';
+  background: hsl(0, 0%, 0%, .3);
+  width: 220px;
+  height: 280px;
+  border-radius: 30px;
+  text-align: center;
+  line-height: 280px;
+}
+
+.mright .img2:hover::after {
+  display: block;
+  position: absolute;
+  font-size: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  color : white;
+  content: '관광명소2';
+  background: hsl(0, 0%, 0%, .3);
+  width: 220px;
+  height: 280px;
+  border-radius: 30px;
+  text-align: center;
+  line-height: 280px;
+}
+
+.mright .img3:hover::after {
+  display: block;
+  position: absolute;
+  font-size: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  color : white;
+  content: '관광명소3';
+  background: hsl(0, 0%, 0%, .3);
+  width: 220px;
+  height: 280px;
+  border-radius: 30px;
+  text-align: center;
+  line-height: 280px;
+}
 
 }
 
@@ -314,13 +363,60 @@
     height: 750px;
   }
 
-  .mright>img {
+  .mright>.imgRandom {
     width: 130%;
     height: 250px;
     object-fit: cover;
-    padding: .5rem;
+    padding: 10px;
     border-radius: 30px;
   }
+
+    
+.mright .img1:hover::after {
+  display: block;
+  position: absolute;
+  font-size: 30px;
+  top: 16.5%;
+  color : white;
+  content: '관광명소1';
+  background: hsl(0, 0%, 0%, .3);
+  width: 124%;
+  height: 230px;
+  border-radius: 30px;
+  text-align: center;
+  line-height: 250px;
+}
+
+.mright .img2:hover::after {
+  display: block;
+  position: absolute;
+  font-size: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  color : white;
+  content: '관광명소2';
+  background: hsl(0, 0%, 0%, .3);
+  width: 124%;
+  height: 230px;
+  border-radius: 30px;
+  text-align: center;
+  line-height: 250px;
+}
+
+.mright .img3:hover::after {
+  display: block;
+  position: absolute;
+  font-size: 30px;
+  top: 83.5%;
+  color : white;
+  content: '관광명소3';
+  background: hsl(0, 0%, 0%, .3);
+  width: 124%;
+  height: 230px;
+  border-radius: 30px;
+  text-align: center;
+  line-height: 250px;
+}
 
   .texts {
     display: flex;
@@ -526,12 +622,50 @@
     transform: translate(-50%, -250px);
   }
 
-  .mright>img {
-    width: 130%;
-    height: 250px;
-    object-fit: cover;
-    padding: 1rem;
+  .mright .img1:hover::after {
+    display: block;
+    position: absolute;
+    font-size: 30px;
+    top: 16.8%;
+    color : white;
+    content: '관광명소1';
+    background: hsl(0, 0%, 0%, .3);
+    width: 122%;
+    height: 230px;
     border-radius: 30px;
+    text-align: center;
+    line-height: 230px;
+  }
+  
+  .mright .img2:hover::after {
+    display: block;
+    position: absolute;
+    font-size: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    color : white;
+    content: '관광명소2';
+    background: hsl(0, 0%, 0%, .3);
+    width: 122%;
+    height: 230px;
+    border-radius: 30px;
+    text-align: center;
+    line-height: 230px;
+  }
+  
+  .mright .img3:hover::after {
+    display: block;
+    position: absolute;
+    font-size: 30px;
+    top: 83.5%;
+    color : white;
+    content: '관광명소3';
+    background: hsl(0, 0%, 0%, .3);
+    width: 122%;
+    height: 230px;
+    border-radius: 30px;
+    text-align: center;
+    line-height: 230px;
   }
 
   .texts>img,
