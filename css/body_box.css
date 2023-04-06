@@ -3,10 +3,10 @@
 .section1 {
   width: 94%;
   max-height: 730px;
-  top: 55%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  height: 80vh;
+  height: 58vh;
   background-color: #f8f6f6;
   border-radius: 50px;
   position: relative;
