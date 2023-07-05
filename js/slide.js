@@ -58,9 +58,7 @@ if (window.innerWidth > 625) {
       setTimeout(() => {
         imgBox.style.transition = `0s`;
         imgBox.style.transform = `translateX(${(imgWrap.length - 1) * -450}px)`;
-        imgBox.addEventListener("transitionend", () => {
         transitionInProgress = false; 
-      })
       }, 1000);
       count = imgWrap.length - 1;
     }
@@ -133,7 +131,7 @@ if (window.innerWidth <= 625) {
         transitionInProgress = false; 
       })
     } else if (count === 0) {
-      imgBox.style.transform = `translate(280)`;
+      imgBox.style.transform = `translate(280px)`;
       setTimeout(() => {
         imgBox.style.transition = `0s`;
         imgBox.style.transform = `translateX(${(imgWrap.length - 1) * -280}px)`;
